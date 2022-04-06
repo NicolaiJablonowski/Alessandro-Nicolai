@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Kontrollstrukturen</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<script>
+			"use strict";
+
+			// Programmiere hier calc
+			
+			function ssio(vX,vY,vJib,vAusgabe){ 
+			
+			vAusgabe = vAusgabe + "<table border=1>";
+			vAusgabe = vAusgabe + "<tr><th>x</th><th>f(x)=x<sup>2</sup>+ 4x -10</th></tr>" 
+			while (vX<=vJib){
+			vY=(vX*vX)-(4*vX)-10
+			vAusgabe=vAusgabe + "<tr><td>" + vX + "</td><td>" + vY + "</td></tr>"
+			vX++ 
+			}
+			
+			return vAusgabe
+			}
+
+
+			
+			function clicked() {
+			
+			let vX = 0;
+			let vY
+			let vJib        
+			let vAusgabe
+			
+			vJib = document.getElementById("idZahl").value;
+			
+			vAusgabe = "";
+			vAusgabe = "Jetzt kommt eine Wertetabelle...<br>";
+			
+			vAusgabe=vAusgabe + ssio (vX,vY,vJib,vAusgabe) + "</table>" 
+			document.getElementById("idOutput").innerHTML = vAusgabe;
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<h1>Kontrollstrukturen</h1>
+		Eingabe: <input id="idZahl" type="text" value="10"><br /><br />
+	
+	<button onClick="clicked();">Berechne!</button><br /><br />
+		<div id="idOutput">Hier kommen die Zahlen</div>
+	</body>
+</html>
